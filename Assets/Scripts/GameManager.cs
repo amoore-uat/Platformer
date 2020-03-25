@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int currentScene = 0;
+    [HideInInspector] public int currentScene = 0;
 
     void Awake()
     {
@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Load the scene passed in as a parameter.
+    /// </summary>
+    /// <param name="levelToLoad">Name of the level to load.</param>
     public void LoadLevel(string levelToLoad)
     {
         SceneManager.LoadScene(levelToLoad);
